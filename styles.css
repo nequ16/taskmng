@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
+/*div, p, button, input{
+	background: linear-gradient(-45deg, #e66465, #9198e5);
+	box-shadow: inset 0px 0px 4px #000000;
+}*/
+
+body {
+	background-color: #FFF;
+	margin: 0px;
+	display: flex;
+	height: 100vh;
+}
+
+p, button, input {
+	font-family: Quicksand, Trebuchet MS;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+
+
+.sidebar {
+	width: 320px;
+	height: 100%;
+	background-color: #334;
+	color: #EEE;
+}
+
+#group-title {
+	font-size: 24px;
+	padding: 16px;
+	background-color: #445;
+}
+
+.group-list {
+	overflow: auto;
+	max-height: calc(100% - 154px);
+}
+
+.group-item {
+	display: flex;
+	flex-direction: row;
+	cursor: pointer;
+	transition: all 0.1s ease-out;
+}
+
+.group-item:hover {
+	background-color: #556;
+}
+
+.group-item:active {
+	background-color: #445;
+}
+
+.group-item.selected {
+	background-color: #FFF;
+	color: #111;
+}
+
+.group-item.selected:active {
+	background-color: #DDD;
+}
+
+.group-item p {
+	flex: 1;
+	margin: 0px;
+	padding: 12px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.group-item input {
+	flex: 1;
+	width: calc(100% - 24px);
+	padding: 12px;
+	border: none;
+	outline: none;
+	color: #EEE;
+	box-shadow: inset 0px -2px #000;
+}
+
+.group-item.selected input {
+	color: #111;
+}
+
+.group-item div {
+	display: flex;
+	overflow: clip;
+	max-width: 0px;
+	transition: max-width 0.2s ease-out;
+}
+
+.group-item:hover div {
+	max-width: 80px;
+}
+
+.group-item button {
+	font-size: 16px;
+	cursor: pointer;
+	min-width: 40px;
+}
+
+.group-item button:hover {
+	background-color: #445;
+}
+
+.group-item button:active {
+	background-color: #334;
+}
+
+.group-item.selected button:hover {
+	background-color: #DDD;
+}
+
+.group-item.selected button:active {
+	background-color: #BBC;
+}
+
+.group-item span {
+	font-size: 20px;
+	color: #EEE;
+}
+
+.group-item.selected span {
+	color: #111;
+}
+
+#add-group {
+	width: 100%;
+	padding: 12px;
+	text-align: left;
+	font-weight: bold;
+	cursor: pointer;
+	color: #889;
+	transition: all 0.1s ease-out;
+}
+
+#add-group:hover {
+	background-color: #445;
+}
+
+#add-group:active {
+	background-color: #556;
+}
+
+#add-group span { font-size: 16px; }
+
+
+
+.content {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 64px;
+	overflow: clip;
+}
+
+#task-title {
+	text-align: center;
+	font-size: 32px;
+	margin: 0px;
+}
+
+.info-bar {
+	width: 100%;
+	margin: 8px 0px 32px;
+}
+
+#progress-bar {
+	width: 300px;
+	margin: 0 auto;
+	text-align: center;
+	font-family: Quicksand, Trebuchet MS;
+	font-weight: bold;
+	font-size: 12px;
+	background: #DDD;
+	border-radius: 8px;
+}
+
+.tasking-container {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: clip;
+	border-radius: 16px;
+}
+
+.header-columns {
+	display: flex;
+	flex-direction: row;
+	height: 64px;
+}
+
+.header {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header.pending {
+	background-color: #9CF;
+	color: #345;
+}
+
+.header.progress {
+	background-color: #FD5;
+	color: #542;
+}
+
+.header.done {
+	background-color: #9E7;
+	color: #342;
+}
+
+.header p {
+	width: calc(100% - 64px);
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.header button {
+	outline: none;
+	border: none;
+	cursor: pointer;
+	padding: 6px 6px 2px;
+	background-color: #FFF;
+	border-radius: 8px;
+}
+
+.header button:hover {
+	background: #EEE;
+}
+
+.header button:active {
+	background: #DDE;
+}
+
+.task-columns {
+	display: flex;
+	flex-direction: row;
+	height: 100%;
+	overflow: clip;
+}
+
+.task-list {
+	flex: 1;
+	height: 100%;
+	text-align: center;
+	overflow: auto;
+	background-color: #334;
+}
+
+.task-item {
+	margin: 8px;
+	border-radius: 4px;
+	cursor: default;
+	transition: all 0.2s ease-in;
+}
+
+.task-item.pending {
+	background-color: #9CF;
+}
+
+.task-item.progress {
+	background-color: #FD5;
+}
+
+.task-item.done {
+	background-color: #9E7;
+}
+
+.task-item.pending:hover {
+	background-color: #7AE;
+}
+
+.task-item.progress:hover {
+	background-color: #DB1;
+}
+
+.task-item.done:hover {
+	background-color: #6C4;
+}
+
+.task-item.anim {
+	opacity: 0;
+	transform: scale(0.9);
+}
+
+.task-item p {
+	margin: 0px;
+	padding: 16px;
+	text-align: left;
+	font-weight: bold;
+}
+
+.task-item input {
+	width: calc(100% - 32px);
+	padding: 16px;
+	border: none;
+	outline: none;
+	box-shadow: inset 0px -2px #0007;
+}
+
+.task-item div {
+	overflow: clip;
+	transition: max-height 0.2s ease-out;
+	max-height: 0px;
+	display: flex;
+}
+
+.task-item:hover div {
+	max-height: 28px;
+}
+
+.task-item button {
+	flex: 1;
+	cursor: pointer;
+}
+
+.task-item button:hover {
+	background-color: #0072;
+}
+
+.task-item button:active {
+	background-color: #0074;
+}

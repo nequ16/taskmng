@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <title>Task Management</title>
+</head>
+<body>
+
+	<div class="sidebar">
+		<p id="group-title"> Task groups </p>
+		<div class="group-list"></div>
+		<button id="add-group" onclick="addGroup()"><span class="material-icons">add</span> Add group</button>
+    </div>
+    
+	<div class="content">
+		<p id="task-title">Tasks listing</p>
+		<div class="info-bar">
+			<div id="progress-bar">Select a group</div>
+		</div>
+		<div class="tasking-container">
+			<div class="header-columns">
+				<div class="header pending">
+					<p> Pending </p>
+					<button onclick="addTask(0)" disabled> <span class="material-icons">add</span> </button>
+				</div>
+				<div class="header progress">
+					<p> In progress </p>
+					<button onclick="addTask(1)" disabled> <span class="material-icons">add</span> </button>
+				</div>
+				<div class="header done">
+					<p> Completed </p>
+					<button onclick="clearTasks()" disabled> <span class="material-icons">delete_sweep</span> </button>
+				</div>
+			</div>
+			
+			<div class="task-columns">
+				<div class="task-list"></div>
+				<div class="task-list"></div>
+				<div class="task-list"></div>
+			</div>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+</body>
+</html>
